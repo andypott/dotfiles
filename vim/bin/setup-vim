@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Create folder for swap files
+mkdir -p ~/.vim/swp
+
+# Install Vim Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# Install all other plugins
+vim +PlugInstall +qall
+
+# Compile YouCompleteMe.  Assumes dependencies are already installed
+~/bin/ycm-recompile
