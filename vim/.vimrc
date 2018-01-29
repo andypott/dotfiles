@@ -40,6 +40,9 @@ set expandtab
 set wildmenu
 set wildmode=longest:full,full
 
+"ALE
+let g:ale_linters = {'go': ['go build']}
+
 "YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_rust_src_path = '/home/andy/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
