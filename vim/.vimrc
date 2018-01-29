@@ -46,6 +46,12 @@ let g:ycm_rust_src_path = '/home/andy/.rustup/toolchains/stable-x86_64-unknown-l
 let g:ycm_goto_buffer_command = 'vertical-split'
 nnoremap <leader>t :YcmCompleter GetType<CR>
 
+"vim-go
+autocmd FileType go noremap <F5> :GoTest<CR>
+autocmd FileType go nmap <leader>i <Plug>(go-info)
+let g:go_auto_type_info = 1
+set updatetime=500
+
 " Airline
 let g:airline_powerline_fonts = 1
 set laststatus=2
@@ -58,7 +64,6 @@ autocmd FileType javascript,css,scheme,lua setlocal shiftwidth=2 softtabstop=2
 autocmd FileType make setlocal noexpandtab shiftwidth=8 softtabstop=8 tabstop=8
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd FileType php setlocal smartindent
-autocmd FileType go noremap <F5> :GoTest<CR>
 
 " Disable arrow keys in normal mode, to force the use of hjkl
 noremap <Up> <NOP>
