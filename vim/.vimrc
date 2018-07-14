@@ -47,16 +47,22 @@ let g:ale_linters = {'go': ['go build']}
 let g:ycm_confirm_extra_conf = 0
 let g:ycm_rust_src_path = '/home/andy/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/src'
 let g:ycm_goto_buffer_command = 'vertical-split'
-nnoremap <leader>t :YcmCompleter GetType<CR>
 
 "vim-go
-autocmd FileType go noremap <F5> :GoTest<CR>
+autocmd FileType go nmap <leader>t <Plug>(go-test)<CR>
 autocmd FileType go nmap <leader>i <Plug>(go-info)
-let g:go_auto_type_info = 1
-set updatetime=500
+autocmd FileType go nmap <leader>b <Plug>(go-build)
+autocmd FileType go nmap <leader>r <Plug>(go-run)
+autocmd FileType go nmap <leader>d <Plug>(go-def)
+"let g:go_auto_type_info = 1
+"set updatetime=500
+let g:go_fmt_command = "goimports"
+"let g:go_highlight_types = 1
+"let g:go_highlight_functions = 1
+"let g:go_highlight_fields = 1
 
 " Airline
-let g:airline_powerline_fonts = 1
+let g:airline_powerline_fonts = 0
 set laststatus=2
 set encoding=utf-8
 
@@ -75,6 +81,10 @@ noremap <Left> :bprevious<CR>
 noremap <Right> :bnext<CR>
 "use jj to get back to normal mode
 inoremap jj <esc>
+let mapleader=" "
+map <C-n> :cnext<CR>
+map <C-m> :cprevious<CR>
+nnoremap <leader>a :cclose<CR>
 
 " Open splits on the right hand side
 set splitright
@@ -86,3 +96,6 @@ set nobackup writebackup
 
 " allow vim to open man pages
 runtime ftplugin/man.vim
+
+" Automatically save when running make
+set autowrite
