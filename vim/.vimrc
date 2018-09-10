@@ -41,7 +41,7 @@ set wildmenu
 set wildmode=longest:full,full
 
 "ALE
-let g:ale_linters = {'go': ['go build']}
+let g:ale_linters = {'javascript': ['tsserver']}
 
 "YouCompleteMe
 let g:ycm_confirm_extra_conf = 0
@@ -54,6 +54,7 @@ autocmd FileType go nmap <leader>i <Plug>(go-info)
 autocmd FileType go nmap <leader>b <Plug>(go-build)
 autocmd FileType go nmap <leader>r <Plug>(go-run)
 autocmd FileType go nmap <leader>d <Plug>(go-def)
+autocmd FileType go nmap <leader>n <Plug>(go-rename)
 "let g:go_auto_type_info = 1
 "set updatetime=500
 let g:go_fmt_command = "goimports"
@@ -84,7 +85,7 @@ inoremap jj <esc>
 let mapleader=" "
 map <C-n> :cnext<CR>
 map <C-m> :cprevious<CR>
-nnoremap <leader>a :cclose<CR>
+nnoremap <leader>a :lclose<CR>
 
 " Open splits on the right hand side
 set splitright
